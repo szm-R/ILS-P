@@ -20,7 +20,7 @@
     <feature name="Badge">
         <param name="android-package" value="de.appplant.cordova.plugin.badge.Badge" />
     </feature>
-    <name>EStest1</name>
+    <name>تجربه‌نگار</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
