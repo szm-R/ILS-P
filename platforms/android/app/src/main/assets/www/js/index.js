@@ -744,24 +744,21 @@ scheduleNotifs:function() {
 		//Section 1 - Declaring necessary variables
 		//Declares the number of intervals between the notifications for each day
     //We are going to beep participants 5 times a day so we have 5 intervals
-    var interval1, interval2, interval3, interval4, interval5;
+    var interval1, interval2, interval3, interval4, interval5, interval6;
     var epoch1, epoch2, epoch3, epoch4, epoch5, epoch6;
 
 		//Declares a variable to represent the id of each notification for the day
-    var a, b, c, d, e;
+    var a, b, c, d, e, f;
 
 		//Declare a variable to represent new date to be calculated for each beep
-    var date1, date2, date3, date4, date5;
-
-		//The statement below declares the start and end time of the daily data collection period
-		//These variables are not necessary if the start and end time of the daily data
-    //collection period do not vary across the experience sampling data collection period
-    var currentMaxHour, currentMaxMinute, currentMinHour, currentMinMinute, nextMinHour, nextMinMinute;
+    var date1, date2, date3, date4, date5, date6;
 
 		//The next three lines create variables for the present time when the notifications are being scheduled
     var dateObject = new Date();
     var now = dateObject.getTime();
-    var dayOfWeek = dateObject.getDay(), currentHour = dateObject.getHours(), currentMinute = dateObject.getMinutes();
+    var currentHour = dateObject.getHours(), currentMinute = dateObject.getMinutes();
+    var currentDate = dateObject.getDate();
+
 
 		//The next variables represent the amount of time between the end of the data
     //collection to the start of the next one (nightlyLag),
@@ -770,82 +767,108 @@ scheduleNotifs:function() {
 		//in the data collection period (maxInterval), and the time until
     //the end of the next data collection period (in our case
 		//dinner time; dinnerInterval)
-    var currentLag, maxInterval, dinnerInterval;
+    var startingPoint, maxInterval, endPoint;
 
 		//These represents the participants time values
-		var weekendSleepTime = localStore.weekendSleepTime.split(":");
-		var weekendWakeTime = localStore.weekendWakeTime.split(":");
-		var weekdaySleepTime = localStore.weekdaySleepTime.split(":");
-		var weekdayWakeTime = localStore.weekdayWakeTime.split(":");
+		var sleepTime = localStore.sleepTime.split(":");
+		var wakeTime = localStore.wakeTime.split(":");
 
     // Timing constants in milliseconds
    	var day = 86400000;
     // The minimum time between two consecutive notifications
-   	var minDiaryLag = 5400000;
-    // Plus the time above makes the maximum time between two consecutive notifications
-   	var randomDiaryLag = 1800000;
+    var maxInterval, minInterval;
+    var randomRange = 60*60*1000; // 1 hour in milliseconds
+    var maxAwakeTimeRequired = 6*1.5*60*60*1000;
+    var nightlyLag = 30*60*1000;
+    startDate = 27;
+    delayDeys = 24*(startDate - parseInt(currentDate));
 
 		//This is a loop that repeats this block of codes for the number of days there
     //are in the experience sampling period, in our case 90 days (3 months).
-    for (i = 0; i < 90; i++)
+    dayCount = 0
+    numberOfNotifs = 6;
+    minAllowedInt = 90*60*1000;
+    minDistance = 60*60*1000;
+
+    var sleepHour = parseInt(sleepTime[0]);
+    var sleepMinute = parseInt(sleepTime[1]);
+    var wakeHour = parseInt(wakeTime[0]);
+    var wakeMinute = parseInt(wakeTime[1]);
+
+    if (sleepHour == 0) {sleepHour = 24;}
+
+    for (i = 0; i < 60; i++)
     {
-        var alarmDay = dayOfWeek + 1 + i;
+        // if (i%2 == 1)
+        //     continue;
 
-        //enter time weekendSleepTime hour and then enter weekendSleepTime minute
-   			if (alarmDay > 6) {alarmDay = alarmDay - 7;}
-   			if (alarmDay == 0 || alarmDay == 6)
-        {
-     				currentMaxHour = weekendSleepTime[0];
-     				currentMaxMinutes = weekendSleepTime[1];
-     				currentMinHour = weekendWakeTime[0];
-     				currentMinMinutes = weekendWakeTime[1];
-     				if (alarmDay == 0)
-            {
-       					nextMinHour = weekdayWakeTime[0];
-       					nextMinMinutes = weekdayWakeTime[1];
-     				}
-     				else
-            {
-       					nextMinHour = weekendWakeTime[0];
-       					nextMinMinutes = weekendWakeTime[1];
-     				}
-     				currentLag = (((((24 - parseInt(currentHour) + parseInt(weekendWakeTime[0]))*60) - parseInt(currentMinute) + parseInt(weekendWakeTime[1]))*60)*1000);
-   			}
-   			else
-        {
-     				currentMaxHour = weekdaySleepTime[0];
-     				currentMaxMinutes = weekdaySleepTime[1];
-     				currentMinHour = weekdayWakeTime[0];
-     				currentMinMinutes = weekdayWakeTime[1];
-     				if (alarmDay == 5)
-            {
-       					nextMinHour = weekendWakeTime[0];
-       					nextMinMinutes = weekendWakeTime[1];
-     				}
-     				else
-            {
-       					nextMinHour = weekdayWakeTime[0];
-       					nextMinMinutes = weekdayWakeTime[1];
-     				}
-            currentLag = (((((24 - parseInt(currentHour) + parseInt(weekdayWakeTime[0]))*60) - parseInt(currentMinute) + parseInt(weekdayWakeTime[1]))*60)*1000);
-     		}
+        wakePoint = (wakeHour*60 + wakeMinute)*60000;
+        sleepPoint = (sleepHour*60 + sleepMinute)*60000;
+        delayPoint = ((delayDeys - parseInt(currentHour))*60 - parseInt(currentMinute))*60000;
 
-   			if (alarmDay == 5 || alarmDay == 0)
+        //The maxInterval is the number of milliseconds between wakeup time and sleep time
+        awakeTime = sleepPoint - wakePoint;
+        maxInterval = awakeTime/numberOfNotifs;
+
+        if (maxInterval < minAllowedInt)
         {
-            nightlyLag = currentLag;
+            maxInterval = minAllowedInt;
+            wakePoint = wakePoint - ((maxAwakeTimeRequired - awakeTime)/2);
+            sleepPoint = sleepPoint + ((maxAwakeTimeRequired - awakeTime)/2);
         }
-   			else
-        {
-            nightlyLag= (((((24 - parseInt(currentHour) + parseInt(nextMinHour))*60) - parseInt(currentMinute) + parseInt(nextMinMinutes))*60)*1000);
-   			}
+        minInterval = maxInterval - randomRange;
 
-        //The maxInterval is the number of milliseconds between wakeup time and dinner time
-        maxInterval = (((((parseInt(currentMaxHour) - parseInt(currentMinHour))*60) + parseInt(currentMaxMinute) - parseInt(currentMinMinute))*60)*1000);
-		    interval1 = parseInt(currentLag) + (parseInt(Math.round(Math.random()*randomDiaryLag)+minDiaryLag)) + day*i;
-   			interval2 = interval1 + (parseInt(Math.round(Math.random()*randomDiaryLag)+minDiaryLag));
-   			interval3 = interval2 + (parseInt(Math.round(Math.random()*randomDiaryLag)+minDiaryLag));
-   			interval4 = interval3 + (parseInt(Math.round(Math.random()*randomDiaryLag)+minDiaryLag));
-   			interval5 = interval4 + (parseInt(Math.round(Math.random()*randomDiaryLag)+minDiaryLag));
+        lowerRange = 45*60*1000; // 45 minutes
+        split1 = wakePoint + maxInterval - lowerRange;
+        split2 = wakePoint + 2*maxInterval - lowerRange;
+        split3 = wakePoint + 3*maxInterval - lowerRange;
+        split4 = wakePoint + 4*maxInterval - lowerRange;
+        split5 = wakePoint + 5*maxInterval - lowerRange;
+
+        interval1 = split1 + parseInt(Math.round(Math.random()*randomRange));
+
+        interval2 = split2 + parseInt(Math.round(Math.random()*randomRange));
+        if ((interval2 - interval1) < minDistance)
+        {
+            newLowBound = minDistance - (interval2 - interval1);
+            newUpBound = split3 - interval2;
+            newRange = newUpBound - newLowBound;
+            interval2 = interval2 + parseInt(Math.round(Math.random()*newRange));
+        }
+
+        interval3 = split3 + parseInt(Math.round(Math.random()*randomRange));
+        if ((interval3 - interval2) < minDistance)
+        {
+            newLowBound = minDistance - (interval3 - interval2);
+            newUpBound = split4 - interval3;
+            newRange = newUpBound - newLowBound;
+            interval3 = interval3 + parseInt(Math.round(Math.random()*newRange));
+        }
+
+        interval4 = split4 + parseInt(Math.round(Math.random()*randomRange));
+        if ((interval4 - interval3) < minDistance)
+        {
+            newLowBound = minDistance - (interval4 - interval3);
+            newUpBound = split5 - interval4;
+            newRange = newUpBound - newLowBound;
+            interval4 = interval4 + parseInt(Math.round(Math.random()*newRange));
+        }
+
+        interval5 = split5 + parseInt(Math.round(Math.random()*randomRange));
+        if ((interval5 - interval4) < minDistance)
+        {
+            newLowBound = minDistance - (interval5 - interval4);
+            newUpBound = sleepPoint - 2*nightlyLag - interval5;
+            newRange = newUpBound - newLowBound;
+            interval5 = interval5 + parseInt(Math.round(Math.random()*newRange));
+        }
+
+        interval1 = delayPoint + interval1 + day*i;
+        interval2 = delayPoint + interval2 + day*i;
+        interval3 = delayPoint + interval3 + day*i;
+        interval4 = delayPoint + interval4 + day*i;
+        interval5 = delayPoint + interval5 + day*i;
+        interval6 = delayPoint + sleepPoint - nightlyLag + day*i;
 
         //Calculate a unique ID for each notification
         a = 101+(parseInt(i)*100);
@@ -853,7 +876,7 @@ scheduleNotifs:function() {
         c = 103+(parseInt(i)*100);
         d = 104+(parseInt(i)*100);
         e = 105+(parseInt(i)*100);
-
+        f = 106+(parseInt(i)*100);
 
 			  //This part of the code calculates the time when the notification should
         //be sent by adding the time interval to the current date and time
@@ -862,29 +885,35 @@ scheduleNotifs:function() {
         date3 = new Date(now + interval3);
         date4 = new Date(now + interval4);
         date5 = new Date(now + interval5);
+        date6 = new Date(now + interval6);
 
         epoch1 = date1.getTime();
         epoch2 = date2.getTime();
         epoch3 = date3.getTime();
         epoch4 = date4.getTime();
         epoch5 = date5.getTime();
+        epoch6 = date6.getTime();
 
 
 			  //This part of the code schedules the notifications
       	cordova.plugins.notification.local.schedule([
-          {icon: 'ic_launcher', id: a, text: 'Time for your next Diary Survey!', title: 'Diary Surveys', trigger: {at: new Date(epoch1)} },
-  				{icon: 'ic_launcher', id: b, text: 'Time for your next Diary Survey!', title: 'Diary Surveys', trigger: {at: new Date(epoch2)} },
-  				{icon: 'ic_launcher', id: c, text: 'Time for your next Diary Survey!', title: 'Diary Surveys', trigger: {at: new Date(epoch3)} },
-  				{icon: 'ic_launcher', id: d, text: 'Time for your next Diary Survey!', title: 'Diary Surveys', trigger: {at: new Date(epoch4)} },
-  				{icon: 'ic_launcher', id: e, text: 'Time for your next Diary Survey!', title: 'Diary Surveys', trigger: {at: new Date(epoch5)} }
+          {icon: 'ic_launcher', id: a, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch1)} },
+  				{icon: 'ic_launcher', id: b, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch2)} },
+  				{icon: 'ic_launcher', id: c, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch3)} },
+  				{icon: 'ic_launcher', id: d, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch4)} },
+  				{icon: 'ic_launcher', id: e, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch5)} },
+  				{icon: 'ic_launcher', id: f, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch6)} }
         ]);
 
 			  //This part of the code records when the notifications are scheduled for and sends it to the server
-      	localStore['notification_' + i + '_1'] = localStore.participant_id + "_" + a + "_" + date1;
-      	localStore['notification_' + i + '_2'] = localStore.participant_id + "_" + b + "_" + date2;
-      	localStore['notification_' + i + '_3'] = localStore.participant_id + "_" + c + "_" + date3;
-      	localStore['notification_' + i + '_4'] = localStore.participant_id + "_" + d + "_" + date4;
-      	localStore['notification_' + i + '_5'] = localStore.participant_id + "_" + e + "_" + date5;
+      	localStore['notification_' + dayCount + '_1'] = localStore.participant_id + "_" + a + "_" + date1;
+      	localStore['notification_' + dayCount + '_2'] = localStore.participant_id + "_" + b + "_" + date2;
+      	localStore['notification_' + dayCount + '_3'] = localStore.participant_id + "_" + c + "_" + date3;
+      	localStore['notification_' + dayCount + '_4'] = localStore.participant_id + "_" + d + "_" + date4;
+      	localStore['notification_' + dayCount + '_5'] = localStore.participant_id + "_" + e + "_" + date5;
+      	localStore['notification_' + dayCount + '_6'] = localStore.participant_id + "_" + f + "_" + date6;
+
+        dayCount += 1;
     }
 },
 
