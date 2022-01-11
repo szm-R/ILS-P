@@ -699,7 +699,7 @@ saveDataLastPage:function() {
 	  var storage_save=JSON.parse(storage);
     $.ajax({
            type: 'post',
-           url: 'https://script.google.com/macros/s/AKfycbxHvguhmILWk5PZ-Y8pCbpTUCyCK1ES7sMCWAE3M3XKYgagYwoFtsgQ6KW8D6IlNU1L/exec',
+           url: 'https://script.google.com/macros/s/AKfycbx-Xem5b4LRCnoSnBR4BDFDo-a8rB8Z7mbul2Ao_9sKI0JsTDIN0cg-BWjL_aopdmjD/exec',
            data: storage_save,
            crossDomain: true,
            success: function (result) {
@@ -726,7 +726,7 @@ saveData:function() {
 	  var storage_save=JSON.parse(storage);
     $.ajax({
            type: 'post',
-           url: 'https://script.google.com/macros/s/AKfycbxHvguhmILWk5PZ-Y8pCbpTUCyCK1ES7sMCWAE3M3XKYgagYwoFtsgQ6KW8D6IlNU1L/exec',
+           url: 'https://script.google.com/macros/s/AKfycbx-Xem5b4LRCnoSnBR4BDFDo-a8rB8Z7mbul2Ao_9sKI0JsTDIN0cg-BWjL_aopdmjD/exec',
            data: storage_save,
            crossDomain: true,
            success: function (result) {
