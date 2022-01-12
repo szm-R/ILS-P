@@ -261,27 +261,17 @@ var participantSetup = [
                         {
             						"type":"text",
             						"variableName": "participant_id",
-            						"questionPrompt": "لطفا شماره کاربری خود را وارد کنید:"
+            						"questionPrompt": ":لطفا شماره کاربری خود را وارد کنید"
                         },
             						{
             						"type":"timePicker",
-            						"variableName": "weekdayWakeTime",
-            						"questionPrompt": "در روزهای عادی هفته معمولا چه زمانی از خواب بیدار می‌شوید؟"
+            						"variableName": "wakeTime",
+            						"questionPrompt": "معمولا چه زمانی از خواب بیدار می‌شوید؟"
                         },
             						{
             						"type":"timePicker",
-            						"variableName": "weekdaySleepTime",
-            						"questionPrompt": "در روزهای عادی هفته معمولا چه زمانی می‌خوابید؟"
-                        },
-            						{
-            						"type":"timePicker",
-            						"variableName": "weekendWakeTime",
-            						"questionPrompt": "در روزهای تعطیل معمولا چه زمانی از خواب بیدار می‌شوید؟"
-                        },
-            						{
-            						"type":"timePicker",
-            						"variableName": "weekendSleepTime",
-            						"questionPrompt": "در روزهای تعطیل معمولا چه زمانی می‌خوابید؟"
+            						"variableName": "sleepTime",
+            						"questionPrompt": "معمولا چه زمانی می‌خوابید؟"
                         }
                     ];
 
@@ -780,7 +770,7 @@ scheduleNotifs:function() {
     var randomRange = 60*60*1000; // 1 hour in milliseconds
     var maxAwakeTimeRequired = 6*1.5*60*60*1000;
     var nightlyLag = 30*60*1000;
-    startDate = 27;
+    startDate = 12;
     delayDeys = 24*(startDate - parseInt(currentDate));
 
 		//This is a loop that repeats this block of codes for the number of days there
