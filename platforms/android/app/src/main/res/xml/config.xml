@@ -36,6 +36,5 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
-    <splash density="hdpi" src="platforms/android/app/src/main/res/drawable-port-hdpi/screen.png" />
     <preference name="loglevel" value="DEBUG" />
 </widget>

@@ -996,7 +996,7 @@ pauseEvents: function() {
 sampleParticipant: function() {
     var current_moment = new Date();
     var current_time = current_moment.getTime();
-    
+
     if ((current_time - localStore.pause_time) > 600000 || localStore.snoozed == 1)
     {
         uniqueKey = new Date().getTime();
@@ -1013,7 +1013,6 @@ sampleParticipant: function() {
     app.saveData();
 },
 
-//uncomment this function to test data saving function (Stage 2 of Customization)
 saveDataLastPage:function() {
     $("#question").html("<h3>...در حال ارسال پاسخ‌ها</h3>");
 	  var storage = JSON.stringify(localStore);
@@ -1024,12 +1023,12 @@ saveDataLastPage:function() {
            data: storage_save,
            crossDomain: true,
            success: function (result) {
-           var pid = localStore.participant_id, snoozed = localStore.snoozed, uniqueKey = localStore.uniqueKey, pause_time=localStore.pause_time;
+           var pid = localStore.participant_id, snoozed = localStore.snoozed, uniqueKey = localStore.uniqueKey, pause_time=localStore.pause_time, sleepTime = localStore.sleepTime;
            localStore.clear();
            localStore.participant_id = pid;
            localStore.snoozed = snoozed;
       		 localStore.uniqueKey = uniqueKey;
-      		 localStore.pause_time=pause_time;
+      		 localStore.pause_time = pause_time;
            localStore.sleepTime = sleepTime;
            $("#question").html("<h3>(: پاسخ‌های شما ارسال شد. ممنون</h3>");
            },
@@ -1040,6 +1039,7 @@ saveDataLastPage:function() {
                 $("#question button").click(function () {app.saveDataLastPage();});
 				   }
            });
+    localStore.pause_time = new Date().getTime();
 },
 
 //uncomment this function to test data saving function (Stage 2 of Customization)
@@ -1092,7 +1092,7 @@ scheduleNotifs:function() {
     var randomRange = 60*60*1000; // 1 hour in milliseconds
     var maxAwakeTimeRequired = 6*1.5*60*60*1000;
     var nightlyLag = 30*60*1000;
-    startDate = 12;
+    startDate = 13;
     delayDays = 24*(startDate - parseInt(currentDate));
 
     dayCount = 0
