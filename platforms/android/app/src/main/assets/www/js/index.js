@@ -45,7 +45,7 @@ var surveyQuestions = [
                       {
                       "type":"text",
                       "variableName": "CADescription",
-                      "questionPrompt": "لطفاُ کاری را که دقیقا پیش از شروع به پر کردن پرسش‌نامه مشغول انجام آن بودید در چند کلمه توصیف کنید. برای مثال: گشتن در اینستاگرام، نوشتن تکالیف ریاضی، تماشای فیلم، مطالعهٔ رمان",
+                      "questionPrompt": "لطفاً کاری را که دقیقا پیش از شروع به پر کردن پرسش‌نامه مشغول انجام آن بودید در چند کلمه توصیف کنید. برای مثال: گشتن در اینستاگرام، نوشتن تکالیف ریاضی، تماشای فیلم، مطالعهٔ رمان",
                       },
                       /*2*/
                       // This action was in line with which of your personal goals?
@@ -69,7 +69,7 @@ var surveyQuestions = [
                       {
                       "type":"text",
                       "variableName": "OtherGoals",
-                      "questionPrompt": "لطفاً هدف از انجام این کار (currentAction) را در چند کلمه توصیف کنید:",
+                      "questionPrompt": "لطفاً هدف از انجام این کار (currentAction) را در چند کلمه توصیف کنید",
                       },
                       /*4*/
                       // To which of the following categories does the goal of this action belong?
@@ -111,7 +111,7 @@ var surveyQuestions = [
                       {
                       "type":"checklist",
                       "variableName": "OthersPresent",
-                      "questionPrompt": "چه کسانی؟ می‌توانید چند گزینه انتخاب کنید",
+                      "questionPrompt": "چه کسانی؟ (می‌توانید چند گزینه انتخاب کنید)",
                       "minResponse": 1,
                       "maxResponse": 6,
                       "labels": [
@@ -135,7 +135,7 @@ var surveyQuestions = [
                                {"label": "خانه"},
                                {"label": "مدرسه"},
                                {"label": "خیابان"},
-                               {"label": "باشگاه"},
+                               {"label": "باشگاه، پارک، سینما"},
                                {"label": "منزل دوستان و اقوام"},
                                {"label": "موارد دیگر"}
                                ],
@@ -168,7 +168,7 @@ var surveyQuestions = [
                       {
                       "type":"checklist",
                       "variableName": "ForOthers",
-                      "questionPrompt": "چه کسانی؟ می‌توانید چند گزینه انتخاب کنید",
+                      "questionPrompt": "چه کسانی؟ (می‌توانید چند گزینه انتخاب کنید)",
                       "minResponse": 1,
                       "maxResponse": 6,
                       "labels": [
@@ -204,7 +204,7 @@ var surveyQuestions = [
                       {
                       "type": "mult1",
                       "variableName": "AlternativeActionYN",
-                      "questionPrompt": "به چه میزان در ابتدای تصمیم برای انجام این کار (currentAction)، و یا در حال انجام آن، احساس کردید تمایل دارید و یا باید کار دیگری انجام دهید؟",
+                      "questionPrompt": "به چه میزان در ابتدای تصمیم برای انجام این کار (currentAction)، و یا در حال انجام آن، احساس کردید تمایل دارید، و یا باید، کار دیگری انجام دهید؟",
                       "minResponse": 0,
                       "maxResponse": 4,
                       "labels": [
@@ -224,7 +224,7 @@ var surveyQuestions = [
                       {
                       "type":"text",
                       "variableName": "AltActionDescription",
-                      "questionPrompt": "لطفاُ این کار جایگزین را در چند کلمه توصیف کنید. برای مثال: گشتن در اینستاگرام، نوشتن تکالیف ریاضی، تماشای فیلم، مطالعهٔ رمان",
+                      "questionPrompt": "لطفاً این کار جایگزین را در چند کلمه توصیف کنید. برای مثال: گشتن در اینستاگرام، نوشتن تکالیف ریاضی، تماشای فیلم، مطالعهٔ رمان",
                       },
                       /*14*/
                       // This action was in line with which of your personal goals?
@@ -256,7 +256,7 @@ var surveyQuestions = [
                       {
                       "type":"checklist",
                       "variableName": "AltActionGoalCategory",
-                      "questionPrompt": "این هدف در کدام‌یک از دسته‌های زیر قرار می‌گیرد؟ مهمترین مورد(ها) را انتخاب کنید",
+                      "questionPrompt": "این هدف در کدام‌یک از دسته‌های زیر قرار می‌گیرد؟ (مهمترین مورد(ها) را انتخاب کنید)",
                       "minResponse": 1,
                       "maxResponse": 9,
                       "labels": [
@@ -278,15 +278,15 @@ var surveyQuestions = [
                       {
                       "type":"instructions",
                       "variableName": "ConflictReason",
-                      "questionPrompt": "مشخص کنید هر یک از مواردی که در ادامه می‌آید به چه میزان دلیل شما برای انتخاب نکردن این کار جایگزین (altAction) را به درستی نشان می‌دهد",
+                      "questionPrompt": "لطفاً مشخص کنید هر یک از مواردی که در ادامه می‌آید به چه میزان دلیل شما برای انتخاب نکردن این کار جایگزین (altAction) را به درستی نشان می‌دهد",
                       },
                       /*18*/
-                      // The action I performed was currently more important for
+                      // The action I performed was currently more enjoyable for
                       // me.
                       {
                       "type": "mult1",
-                      "variableName": "CRImportance",
-                      "questionPrompt": "کاری که انجام دادم (currentAction) در حال حاضر مهم‌تر بود",
+                      "variableName": "CRfun",
+                      "questionPrompt": "کاری که انجام دادم (currentAction) در حال حاضر برایم لذت‌بخش‌تر بود",
                       "minResponse": 0,
                       "maxResponse": 4,
                       "labels": [
@@ -298,12 +298,12 @@ var surveyQuestions = [
                                ],
                       },
                       /*19*/
-                      // The action I performed was currently more enjoyable for
+                      // The action I performed was currently more important for
                       // me.
                       {
                       "type": "mult1",
-                      "variableName": "CRfun",
-                      "questionPrompt": "کاری که انجام دادم (currentAction) در حال حاضر برایم لذت‌بخش‌تر بود",
+                      "variableName": "CRImportance",
+                      "questionPrompt": "کاری که انجام دادم (currentAction) در حال حاضر برایم مهم‌تر بود",
                       "minResponse": 0,
                       "maxResponse": 4,
                       "labels": [
@@ -335,7 +335,7 @@ var surveyQuestions = [
                       {
                       "type": "mult1",
                       "variableName": "CRExpectation",
-                      "questionPrompt": "کاری که انجام دادم (currentAction) از من انتظار می‌رفت",
+                      "questionPrompt": "کاری را که انجام دادم (currentAction) فرد یا افرادی از من می‌خواستند/انتظار داشتند آن را انجام دهم",
                       "minResponse": 0,
                       "maxResponse": 4,
                       "labels": [
@@ -412,20 +412,11 @@ var surveyQuestions = [
                                ],
                       },
                       /*26*/
-                      // If you think the reason you chose currentAction over altAction
-                      // was not included in the preceding items, explain this reason
-                      // in a few words. Otherwise, just type an arbitrary letter.
-                      {
-                      "type":"text",
-                      "variableName": "CROtherReason",
-                      "questionPrompt": "اگر فکر می‌کنید دلیل اصلی انتخاب کاری که انجام دادید (currentAction) در برابر این کار جایگزین (altAction) در هیچ‌کدام از موارد قبل وجود نداشت، این دلیل را در چند کلمه توضیح دهید. در غیر این صورت، صرفا یک حرف تایپ کنید.",
-                      },
-                      /*27*/
-                      // How satisfied are you with your final choice?
+                      // I didn't feel like doing the altAction
                       {
                       "type": "mult1",
-                      "variableName": "Satisfaction",
-                      "questionPrompt": "چه مقدار از انتخاب نهایی خود احساس رضایت می‌کنید؟",
+                      "variableName": "CRPeers",
+                      "questionPrompt": "کاری را که انجام دادم (currentAction) دوستانم هم انجام دادند/می‌دهند",
                       "minResponse": 0,
                       "maxResponse": 4,
                       "labels": [
@@ -436,6 +427,15 @@ var surveyQuestions = [
                                {"label": "کاملا"}
                                ],
                       },
+                      /*27*/
+                      // If you think the reason you chose currentAction over altAction
+                      // was not included in the preceding items, explain this reason
+                      // in a few words. Otherwise, just type an arbitrary letter.
+                      {
+                      "type":"text",
+                      "variableName": "CROtherReason",
+                      "questionPrompt": "اگر فکر می‌کنید دلیل اصلی انتخاب کاری که انجام دادید (currentAction) در برابر این کار جایگزین (altAction) در هیچ‌کدام از موارد قبل وجود نداشت، این دلیل را در چند کلمه توضیح دهید. در غیر این صورت، صرفا یک حرف تایپ کنید.",
+                      },
                       /*28*/
                       // (In case the participant has chosen "Not at all" option
                       // in the AlternativeActionYN question) Please indicate
@@ -444,14 +444,14 @@ var surveyQuestions = [
                       {
                       "type":"instructions",
                       "variableName": "CAReasonsInstruction",
-                      "questionPrompt": "لطفاُ مشخص کنید هر یک از مواردی که در ادامه می‌آید به چه میزان دلیل شما برای انجام این کار (currentAction) را به درستی نشان می‌دهد",
+                      "questionPrompt": "لطفاً مشخص کنید هر یک از مواردی که در ادامه می‌آید به چه میزان دلیل شما برای انجام این کار (currentAction) را به درستی نشان می‌دهد",
                       },
                       /*29*/
-                      // I did this action because it is important for me.
+                      // I did this action because I enjoy it.
                       {
                       "type": "mult1",
-                      "variableName": "CARImportance",
-                      "questionPrompt": "این کار را انجام دادم چون برایم مهم است",
+                      "variableName": "CARFun",
+                      "questionPrompt": "این کار را انجام دادم چون برایم لذت‌بخش است",
                       "minResponse": 0,
                       "maxResponse": 4,
                       "labels": [
@@ -463,11 +463,11 @@ var surveyQuestions = [
                                ],
                       },
                       /*30*/
-                      // I did this action because I enjoy it.
+                      // I did this action because it is important for me.
                       {
                       "type": "mult1",
-                      "variableName": "CARFun",
-                      "questionPrompt": "این کار را انجام دادم چون برایم لذت‌بخش است",
+                      "variableName": "CARImportance",
+                      "questionPrompt": "این کار را انجام دادم چون برایم مهم است",
                       "minResponse": 0,
                       "maxResponse": 4,
                       "labels": [
@@ -499,7 +499,7 @@ var surveyQuestions = [
                       {
                       "type": "mult1",
                       "variableName": "CARExpectation",
-                      "questionPrompt": "این کار را انجام دادم چون از من انتظار می‌رفت",
+                      "questionPrompt": "این کار را انجام دادم چون فرد یا افرادی می‌خواستند/انتظار داشتند آن را انجام دهم",
                       "minResponse": 0,
                       "maxResponse": 4,
                       "labels": [
@@ -578,29 +578,46 @@ var surveyQuestions = [
                                ],
                       },
                       /*37*/
+                      // I did this action because I didn't feel like doing anything
+                      // else.
+                      {
+                      "type": "mult1",
+                      "variableName": "CARPeers",
+                      "questionPrompt": "این کار را انجام دادم چون دوستانم هم همین کار را انجام دادند/می‌دهند",
+                      "minResponse": 0,
+                      "maxResponse": 4,
+                      "labels": [
+                               {"label": "اصلا"},
+                               {"label": "کمی"},
+                               {"label": "تا حدودی"},
+                               {"label": "زیاد"},
+                               {"label": "کاملا"}
+                               ],
+                      },
+                      /*38*/
                       // If you think the reason that led you to choose currentAction
                       // was not included in the preceding items, explain this reason
                       // in a few words. Otherwise, just type an arbitrary letter.
                       {
                       "type":"text",
                       "variableName": "CROtherReason",
-                      "questionPrompt": "اگر فکر می‌کنید دلیل اصلی انتخاب کاری که انجام دادید (currentAction)  در هیچ‌کدام از موارد قبل وجود نداشت، این دلیل را در چند کلمه توضیح دهید. در غیر این صورت، صرفاً یک حرف تایپ کنید.",
+                      "questionPrompt": "اگر فکر می‌کنید دلیل اصلی انتخاب کاری که انجام دادید (currentAction) در هیچ‌کدام از موارد قبل وجود نداشت، این دلیل را در چند کلمه توضیح دهید. در غیر این صورت، صرفاً یک حرف تایپ کنید.",
                       },
-                      /*38*/
+                      /*39*/
                       // Please describe the thing you were doing before the currentAction
                       // in a few words (For example: browsing instagram, doing
                       // my homework, watching film, Reading a novel)
                       {
                       "type":"text",
                       "variableName": "PreActionDescription",
-                      "questionPrompt": "لطفاُ کاری را که پیش از انجام این کار (currentAction) انجام داده‌اید در چند کلمه توصیف کنید. برای مثال: گشتن در اینستاگرام، نوشتن تکالیف ریاضی، تماشای فیلم، مطالعهٔ رمان",
+                      "questionPrompt": "لطفاً کاری را که پیش از انجام این کار (currentAction) انجام داده‌اید در چند کلمه توصیف کنید. برای مثال: گشتن در اینستاگرام، نوشتن تکالیف ریاضی، تماشای فیلم، مطالعهٔ رمان",
                       },
-                      /*39*/
+                      /*40*/
                       // This action was in line with which of your personal goals?
                       {
                       "type":"mult1",
                       "variableName": "PreActionPGoals",
-                      "questionPrompt": "این کار (preAction)  در راستای کدام‌یک از اهدافی که در ابتدا مشخص کرده بودید قرار دارد؟",
+                      "questionPrompt": "این کار (preAction) در راستای کدام‌یک از اهدافی که در ابتدا مشخص کرده بودید قرار دارد؟",
                       "minResponse": 1,
                       "maxResponse": 4,
                       "labels": [
@@ -610,7 +627,7 @@ var surveyQuestions = [
                                {"label": "هیچ‌کدام"}
                                ],
                       },
-                      /*40*/
+                      /*41*/
                       // (In case the participant has chosen "None" option in the
                       // previous question) Please describe the goal of this action
                       // in a few words:
@@ -619,13 +636,13 @@ var surveyQuestions = [
                       "variableName": "PreActionOtherGoals",
                       "questionPrompt": "لطفاً هدف از انجام این کار (preAction) را در چند کلمه توصیف کنید",
                       },
-                      /*41*/
+                      /*42*/
                       // To which of the following categories does the goal of
                       // this action belong?
                       {
                       "type":"checklist",
                       "variableName": "AltActionGoalCategory",
-                      "questionPrompt": "این هدف در کدام‌یک از دسته‌های زیر قرار می‌گیرد؟ مهمترین مورد(ها) را انتخاب کنید",
+                      "questionPrompt": "این هدف در کدام‌یک از دسته‌های زیر قرار می‌گیرد؟ (مهمترین مورد(ها) را انتخاب کنید)",
                       "minResponse": 1,
                       "maxResponse": 9,
                       "labels": [
@@ -640,14 +657,14 @@ var surveyQuestions = [
                                {"label": "موارد دیگر"}
                                ],
                       },
-                      /*42*/
+                      /*43*/
                       // Please anwser the following questions.
                       {
                       "type":"instructions",
                       "variableName": "GeneralQuestions",
-                      "questionPrompt": "لطفاً به سوالاتی که در ادامه می‌آید پاسخ دهید",
+                      "questionPrompt": "لطفاً به پرسش‌هایی که در ادامه می‌آید پاسخ دهید",
                       },
-                      /*43*/
+                      /*44*/
                       {
                       "type": "mult1",
                       "variableName": "Fatigued",
@@ -662,7 +679,7 @@ var surveyQuestions = [
                                {"label": "کاملا"}
                                ],
                       },
-                      /*44*/
+                      /*45*/
                       {
                       "type": "mult1",
                       "variableName": "Happy",
@@ -677,7 +694,7 @@ var surveyQuestions = [
                                {"label": "کاملا"}
                                ],
                       },
-                      /*45*/
+                      /*46*/
                       {
                       "type": "mult1",
                       "variableName": "Angery",
@@ -692,7 +709,7 @@ var surveyQuestions = [
                                {"label": "کاملا"}
                                ],
                       },
-                      /*46*/
+                      /*47*/
                       {
                       "type": "mult1",
                       "variableName": "Sad",
@@ -707,7 +724,7 @@ var surveyQuestions = [
                                {"label": "کاملا"}
                                ],
                       },
-                      /*47*/
+                      /*48*/
                       {
                       "type": "mult1",
                       "variableName": "Bored",
@@ -722,14 +739,14 @@ var surveyQuestions = [
                                {"label": "کاملا"}
                                ],
                       },
-                      /*48*/
+                      /*49*/
                       // Please anwser the following questions.
                       {
                       "type":"instructions",
                       "variableName": "Parenting",
                       "questionPrompt": "لطفاُ با توجه به رفتار امروز والدینتان مشخص کنید تا چه اندازه با گزاره‌هایی که در ادامه نشان داده می‌شوند موافق هستید",
                       },
-                      /*49*/
+                      /*50*/
                       {
                       "type": "mult1",
                       "variableName": "NotFreeToAct",
@@ -744,7 +761,7 @@ var surveyQuestions = [
                                {"label": "کاملاً موافقم"}
                                ],
                       },
-                      /*50*/
+                      /*51*/
                       {
                       "type": "mult1",
                       "variableName": "RequestYN",
@@ -756,7 +773,7 @@ var surveyQuestions = [
                                {"label": "خیر"}
                                ],
                       },
-                      /*51*/
+                      /*52*/
                       {
                       "type": "mult1",
                       "variableName": "RequestReasonYN",
@@ -768,7 +785,7 @@ var surveyQuestions = [
                                {"label": "خیر"}
                                ],
                       },
-                      /*52*/
+                      /*53*/
                       {
                       "type": "mult1",
                       "variableName": "RequestReasonable",
@@ -783,7 +800,7 @@ var surveyQuestions = [
                                {"label": "کاملاً موافقم"}
                                ],
                       },
-                      /*53*/
+                      /*54*/
                       {
                       "type": "mult1",
                       "variableName": "ControlEverything",
@@ -798,7 +815,7 @@ var surveyQuestions = [
                                {"label": "کاملاً موافقم"}
                                ],
                       },
-                      /*54*/
+                      /*55*/
                       {
                       "type": "mult1",
                       "variableName": "CertainLimits",
@@ -813,26 +830,11 @@ var surveyQuestions = [
                                {"label": "کاملاً موافقم"}
                                ],
                       },
-                      /*55*/
+                      /*56*/
                       {
                       "type": "mult1",
                       "variableName": "InsistToObey",
                       "questionPrompt": "امروز والدینم اصرار داشتند آنطور که آنها می‌خواهند رفتار کنم",
-                      "minResponse": 0,
-                      "maxResponse": 4,
-                      "labels": [
-                               {"label": "کاملاً مخالفم"},
-                               {"label": "مخالفم"},
-                               {"label": "تا حدودی"},
-                               {"label": "موافقم"},
-                               {"label": "کاملاً موافقم"}
-                               ],
-                      },
-                      /*56*/
-                      {
-                      "type": "mult1",
-                      "variableName": "Limit-setting",
-                      "questionPrompt": "امروز برای انجام بعضی کارها با محدودیت‌هایی از طرف والدینم روبه‌رو بودم",
                       "minResponse": 0,
                       "maxResponse": 4,
                       "labels": [
@@ -922,25 +924,25 @@ var lastPage = [
 /*Questions to set up participant notifications so that notifications are
 customized to participant's schedule*/
 var participantSetup = [
-                        /*1/-45*/
+                        /*1/-46*/
                         {
             						"type":"text",
             						"variableName": "participant_id",
-            						"questionPrompt": ":لطفا شماره کاربری خود را وارد کنید"
+            						"questionPrompt": "لطفاً شمارهٔ کاربری خود را وارد کنید"
                         },
-                        /*2/-44*/
+                        /*2/-45*/
             						{
             						"type":"timePicker",
             						"variableName": "wakeTime",
             						"questionPrompt": "معمولا چه زمانی از خواب بیدار می‌شوید؟"
                         },
-                        /*3/-43*/
+                        /*3/-44*/
             						{
             						"type":"timePicker",
             						"variableName": "sleepTime",
             						"questionPrompt": "معمولا چه زمانی می‌خوابید؟"
                         },
-                        /*4/-42*/
+                        /*4/-43*/
                         // Please consider 3 goals that you mean to pursue in
                         // the following 2 months. The goals can take longer that
                         // this 2 months to be fully achieved. If you have more
@@ -949,31 +951,55 @@ var participantSetup = [
                         // 2 months).
                         {
                         "type":"instructions",
-                        "variableName": "GoalInstructions",
-                        "questionPrompt": "لطفاُ سه هدف را که در نظر دارید در دو ماه آینده برای رسیدن به آنها تلاش کنید، در نظر بگیرید. این اهداف می‌توانند طولانی‌مدت‌تر از یک بازهٔ دوماهه باشند. اگر بیشتر از سه هدف در ذهن دارید، تنها مواردی را در نظر بگیرید که به نظرتان مهم‌تر هستند (حداقل برای بازهٔ دو ماه آینده).  مثال‌هایی از اهداف: موفقیت در امتحانات پایان‌ترم، وزن کم کردن، یادگیری یک زبان خارجی و یا راه انداختن یا بهبود یک صفحه اینستاگرامی",
+                        "variableName": "GoalInstructions1",
+                        "questionPrompt": "لطفاً توضیحاتی را که در ادامه نشان داده می‌شوند با دقت مطالعه کنید و سپس به پرسش‌ها پاسخ دهید",
                         },
-                        /*5/-41*/
+                        /*4/-43*/
+                        // Please consider 3 goals that you mean to pursue in
+                        // the following 2 months. The goals can take longer that
+                        // this 2 months to be fully achieved. If you have more
+                        // than 3 goals in mind, only think of those that you
+                        // consider to be more important (at least for the following
+                        // 2 months).
+                        {
+                        "type":"instructions",
+                        "variableName": "GoalInstructions2",
+                        "questionPrompt": "اهداف، تصویر ما از وضعیت‌های دلخواهی هستند که تصمیم داریم برای رسیدن به آنها تلاش کنیم. می‌شود گفت که تمام کارها بالاخره برای رسیدن به هدفی انجام می‌شوند، برای مثال، غذا می‌خوریم تا گرسنگیمان را برطرف کنیم و یا چون از آن لذت می‌بریم. ولی، بعضی از اهداف بالاتر از کارهای عادی روزانه قرار دارند و فرد تلاش می‌کند با انجام کارهایی مشخص به آن هدف دست پیدا کند. برای مثال، برای دست یافتن به هدف «گرفتن نمرات خوب در امتحانات پایان‌ترم» و یا «قبول شدن در یک دانشگاه دولتی»، فرد نیاز دارد به مقدار کافی درس بخواند و یا در کلاس‌های آموزشی شرکت کند و مواردی از این دست. هدف‌هایی که افراد مختلف، و یا یک فرد در زمان‌های مختلف، دنبال می‌کنند بسیار متنوع هستند و زمان لازم برای رسیدن به آنها نیز متفاوت است. برای رسیدن به بعضی از هدف‌ها زمان زیادی نیاز است، مانند هدف «پیدا کردن یک شغل مناسب و دلخواه بعد از فارغ‌التحصیل شدن از دانشگاه» و یا هدف «یاد گرفتن یک زبان خارجی در سطح پیشرفته». از طرف دیگر، بعضی از اهداف در بازهٔ زمانی کوتاه‌تری قابل دست‌‌یابی هستند، مانند «تمام کردن دو کتاب در ماه آینده» و یا «کم کردن ۵ کیلوگرم وزن در عرض دو ماه» و یا «راه‌اندازی و بهبود یک صفحهٔ اینستاگرامی». با دقت در همین مثال‌ها می‌توانید کمابیش به تنوع زیاد اهدافی که هر فرد می‌تواند دنبال کند پی ببرید",
+                        },
+                        /*4/-43*/
+                        // Please consider 3 goals that you mean to pursue in
+                        // the following 2 months. The goals can take longer that
+                        // this 2 months to be fully achieved. If you have more
+                        // than 3 goals in mind, only think of those that you
+                        // consider to be more important (at least for the following
+                        // 2 months).
+                        {
+                        "type":"instructions",
+                        "variableName": "GoalInstructions3",
+                        "questionPrompt": "با توجه به توضیحاتی که در مورد اهداف داده شد، سه عدد از مهمترین هدف‌هایی را که تصمیم دارید در طول دو ماه آینده برای رسیدن به آنها تلاش کنید در نظر بگیرید. این اهداف می‌توانند بلندمدت‌تر از یک بازهٔ دوماهه باشند، ولی مهم این است که تصمیم داشته باشید در دو ماه آینده کارهایی را در راستای رسیدن به این اهداف انجام دهید. اگر بیشتر از سه هدف در ذهن دارید مواردی را در نظر بگیرید که به نظرتان مهم‌تر هستند و باید در طول این دو ماه وقت بیشتری برایشان صرف کنید. در ادامه، از شما می‌خواهیم هر یک از این اهداف را تا حد امکان به صورت مشخص در چند کلمه توصیف کنید و سپس به پرسش‌هایی در رابطه با هر کدام پاسخ دهید",
+                        },
+                        /*5/-42*/
                         // Goal 1:
                         {
                         "type":"text",
                         "variableName": "Goal1",
                         "questionPrompt": ":هدف ۱",
                         },
-                        /*6/-40*/
+                        /*6/-41*/
                         // Goal 2:
                         {
                         "type":"text",
                         "variableName": "Goal2",
                         "questionPrompt": ":هدف ۲",
                         },
-                        /*7/-39*/
+                        /*7/-40*/
                         // Goal 3:
                         {
                         "type":"text",
                         "variableName": "Goal3",
                         "questionPrompt": ":هدف ۳",
                         },
-                        /*8/-38*/
+                        /*8/-39*/
                         // Please answer the following questions regarding your
                         // Goal number 1.
                         {
@@ -981,7 +1007,7 @@ var participantSetup = [
                         "variableName": "Goal1Instruction",
                         "questionPrompt": "لطفاً با در نظر گرفتن هدف ۱ (goal1) به پرسش‌هایی که در ادامه می‌آید پاسخ دهید",
                         },
-                        /*9/-37*/
+                        /*9/-38*/
                         // How committed are you to this goal?
                         {
                         "type": "mult1",
@@ -997,7 +1023,7 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*10/-36*/
+                        /*10/-37*/
                         // How much do you care about this goal?
                         {
                         "type": "mult1",
@@ -1013,7 +1039,7 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*11/-35*/
+                        /*11/-36*/
                         // How much do you care about this goal?
                         {
                         "type": "mult1",
@@ -1029,7 +1055,7 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*12/-34*/
+                        /*12/-35*/
                         // To what extent was this goal your own choice?
                         {
                         "type": "mult1",
@@ -1045,21 +1071,41 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*13/-33*/
+                        /*13/-34*/
+                        // From 0 to 100, how much would you rate the importance of
+                        // this goal for you yourself?
+                        {
+                        "type": "slider",
+                        "variableName": "PersonalImportance1",
+                        "questionPrompt": "به این هدف (goal1) به اندازه ارزش و اولویتی که برای شخص شما دارد (نسبت به بقیهٔ اهداف و کارهایتان در زندگی)، از ۱ تا ۱۰۰ چه نمره‌ای می‌دهید؟ (عددهای بالاتر نشان‌دهندهٔ اهمیت بیشتر هستند)",
+                        "minResponse": 0,
+                        "maxResponse": 100,
+                        },
+                        /*14/-33*/
+                        // From 0 to 100, how much would you rate the importance of
+                        // this goal for your parents?
+                        {
+                        "type": "slider",
+                        "variableName": "ParentalImportance1",
+                        "questionPrompt": "به این هدف (goal1) به اندازه ارزش و اولویتی که برای والدین شما دارد (نسبت به بقیهٔ اهداف و کارهای شما در زندگی)، از ۱ تا ۱۰۰ چه نمره‌ای می‌دهید؟ (عددهای بالاتر نشان‌دهندهٔ اهمیت بیشتر هستند)",
+                        "minResponse": 0,
+                        "maxResponse": 100,
+                        },
+                        /*15/-32*/
                         // Please rate how much the following statements picture
                         // why you pursue this goal.
                         {
                         "type":"instructions",
                         "variableName": "Goal1ReasonsInstructions",
-                        "questionPrompt": "لطفاُ مشخص کنید هر یک از گزاره‌هایی که در ادامه می‌آید تا چه حد دلیل دنبال کردن این هدف (goal1) توسط شما را به درستی نشان می‌دهد",
+                        "questionPrompt": "لطفاً مشخص کنید هر یک از گزاره‌هایی که در ادامه می‌آید تا چه حد دلیل دنبال کردن این هدف (goal1) توسط شما را به درستی نشان می‌دهد",
                         },
-                        /*14/-32*/
+                        /*14/-31*/
                         // I pursue this goal because other people expect it from
                         // me.
                         {
                         "type": "mult1",
-                        "variableName": "Goal1ReasonOthers",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون افراد دیگری انتظار دارند به آن برسم",
+                        "variableName": "Goal1ReasonExtSoc1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم تا مورد تأیید دیگران (خانواده، دوستان و ...) قرار بگیرم",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1075,8 +1121,8 @@ var participantSetup = [
                         // don't.
                         {
                         "type": "mult1",
-                        "variableName": "Goal1ReasonGuilt",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون در غیر این صورت احساس گناه می‌کنم",
+                        "variableName": "Goal1ReasonIntroj1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون در غیر این صورت احساس گناه و شرمندگی می‌کنم",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1092,8 +1138,8 @@ var participantSetup = [
                         // achieving it is important and I value it wholeheartedly
                         {
                         "type": "mult1",
-                        "variableName": "Goal1ReasonBelief",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون واقعا باور دارم رسیدن به این هدف مهم است و برای آن از صمیم قلبم ارزش قائلم",
+                        "variableName": "Goal1ReasonIdent1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون باور دارم رسیدن به آن مهم است",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1109,8 +1155,8 @@ var participantSetup = [
                         // to it.
                         {
                         "type": "mult1",
-                        "variableName": "Goal1ReasonFun",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون تلاش برای رسیدن به آن برایم لذت‌بخش است",
+                        "variableName": "Goal1ReasonExtMat1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم تا بتوانم در آینده موقعیت شغلی بهتری داشته باشم",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1126,8 +1172,8 @@ var participantSetup = [
                         // most in life.
                         {
                         "type": "mult1",
-                        "variableName": "Goal1ReasonIdentity",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون نشان‌دهندهٔ چیزهایی است که بیشترین ارزش را برایم دارند",
+                        "variableName": "Goal1ReasonIntrin1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون تلاش برای رسیدن به آن برایم لذت‌بخش است",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1138,25 +1184,175 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*19-/-27*/
-                        // From 0 to 100, how much would you rate the importance of
-                        // this goal for you yourself?
+                        /*14/-31*/
+                        // I pursue this goal because other people expect it from
+                        // me.
                         {
-                        "type": "slider",
-                        "variableName": "PersonalImportance1",
-                        "questionPrompt": "به این هدف (goal1) به اندازه ارزش و اولویتی که برای شخص شما دارد از ۱ تا ۱۰۰ چه نمره‌ای می‌دهید؟ عددهای بالاتر نشان‌دهندهٔ اهمیت بیشتر هستند",
+                        "type": "mult1",
+                        "variableName": "Goal1ReasonExtSoc2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون باعث می‌شود دیگران (خانواده، دوستان و ...) احترام بیشتری به من بگذارند",
                         "minResponse": 0,
-                        "maxResponse": 100,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
                         },
-                        /*20/-26*/
-                        // From 0 to 100, how much would you rate the importance of
-                        // this goal for your parents?
+                        /*15/-31*/
+                        // I pursue this goal because if I would feel guilty if I
+                        // don't.
                         {
-                        "type": "slider",
-                        "variableName": "ParentalImportance1",
-                        "questionPrompt": "به این هدف (goal1) به اندازه ارزش و اولویتی که برای والدین شما دارد از ۱ تا ۱۰۰ چه نمره‌ای می‌دهید؟ عددهای بالاتر نشان‌دهندهٔ اهمیت بیشتر هستند",
+                        "type": "mult1",
+                        "variableName": "Goal1ReasonIntroj2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون در غیر این صورت احساس بدی به خودم خواهم داشت",
                         "minResponse": 0,
-                        "maxResponse": 100,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*16/-30*/
+                        // I pursue this goal because I genuinely believe that
+                        // achieving it is important and I value it wholeheartedly
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal1ReasonIdent2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون برای خودم ارزش‌مند است",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*17/-29*/
+                        // I pursue this goal because I enjoy the path leading
+                        // to it.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal1ReasonExtMat2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون باعث می‌شود در آینده درآمد بیشتری کسب کنم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*17/-29*/
+                        // I pursue this goal because I enjoy the path leading
+                        // to it.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal1ReasonIntrin2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون هیجان‌انگیز است",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*14/-31*/
+                        // I pursue this goal because other people expect it from
+                        // me.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal1ReasonExtSoc3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم تا مورد انتقاد دیگران (خانواده، دوستان و ...) قرار نگیرم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*15/-31*/
+                        // I pursue this goal because if I would feel guilty if I
+                        // don't.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal1ReasonIntroj3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون باعث می‌شود به خودم افتخار کنم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*16/-30*/
+                        // I pursue this goal because I genuinely believe that
+                        // achieving it is important and I value it wholeheartedly
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal1ReasonIdent3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون نشان‌دهندهٔ چیزهایی است که به شخصه برایشان ارزش قائلم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*17/-29*/
+                        // I pursue this goal because I enjoy the path leading
+                        // to it.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal1ReasonExtMat3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون در غیر این صورت نمی‌توانم شغل مناسبی در آینده داشته باشم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*17/-29*/
+                        // I pursue this goal because I enjoy the path leading
+                        // to it.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal1ReasonIntrin3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون برایم جذاب است",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
                         },
                         /*21/-25*/
                         // Please answer the following questions regarding your
@@ -1230,21 +1426,41 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
+                        /*32/-14*/
+                        // From 0 to 100, how much would you rate the importance of
+                        // this goal for you yourself?
+                        {
+                        "type": "slider",
+                        "variableName": "PersonalImportance2",
+                        "questionPrompt": "به این هدف (goal2) به اندازه ارزش و اولویتی که برای شخص شما دارد (نسبت به بقیهٔ اهداف و کارهایتان در زندگی)، از ۱ تا ۱۰۰ چه نمره‌ای می‌دهید؟ (عددهای بالاتر نشان‌دهندهٔ اهمیت بیشتر هستند)",
+                        "minResponse": 0,
+                        "maxResponse": 100,
+                        },
+                        /*33/-13*/
+                        // From 0 to 100, how much would you rate the importance of
+                        // this goal for your parents?
+                        {
+                        "type": "slider",
+                        "variableName": "ParentalImportance2",
+                        "questionPrompt": "به این هدف (goal2) به اندازه ارزش و اولویتی که برای والدین شما دارد (نسبت به بقیهٔ اهداف و کارهای شما در زندگی)، از ۱ تا ۱۰۰ چه نمره‌ای می‌دهید؟ (عددهای بالاتر نشان‌دهندهٔ اهمیت بیشتر هستند)",
+                        "minResponse": 0,
+                        "maxResponse": 100,
+                        },
                         /*26/-20*/
                         // Please rate how much the following statements picture
                         // why you pursue this goal.
                         {
                         "type":"instructions",
                         "variableName": "Goal2ReasonsInstructions",
-                        "questionPrompt": "لطفاُ مشخص کنید هر یک از گزاره‌هایی که در ادامه می‌آید تا چه حد دلیل دنبال کردن این هدف (goal2) توسط شما را به درستی نشان می‌دهد",
+                        "questionPrompt": "لطفاً مشخص کنید هر یک از گزاره‌هایی که در ادامه می‌آید تا چه حد دلیل دنبال کردن این هدف (goal2) توسط شما را به درستی نشان می‌دهد",
                         },
-                        /*27/-19*/
+                        /*14/-31*/
                         // I pursue this goal because other people expect it from
                         // me.
                         {
                         "type": "mult1",
-                        "variableName": "Goal2ReasonOthers",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون افراد دیگری انتظار دارند به آن برسم",
+                        "variableName": "Goal2ReasonExtSoc1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم تا مورد تأیید دیگران (خانواده، دوستان و ...) قرار بگیرم",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1255,13 +1471,13 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*28/-18*/
+                        /*15/-31*/
                         // I pursue this goal because if I would feel guilty if I
                         // don't.
                         {
                         "type": "mult1",
-                        "variableName": "Goal2ReasonGuilt",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون در غیر این صورت احساس گناه می‌کنم",
+                        "variableName": "Goal2ReasonIntroj1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون در غیر این صورت احساس گناه و شرمندگی می‌کنم",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1272,13 +1488,13 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*29/-17*/
+                        /*16/-30*/
                         // I pursue this goal because I genuinely believe that
                         // achieving it is important and I value it wholeheartedly
                         {
                         "type": "mult1",
-                        "variableName": "Goal2ReasonBelief",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون واقعا باور دارم رسیدن به این هدف مهم است و برای آن از صمیم قلبم ارزش قائلم",
+                        "variableName": "Goal2ReasonIdent1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون باور دارم رسیدن به آن مهم است",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1289,12 +1505,29 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*30/-16*/
+                        /*17/-29*/
                         // I pursue this goal because I enjoy the path leading
                         // to it.
                         {
                         "type": "mult1",
-                        "variableName": "Goal2ReasonFun",
+                        "variableName": "Goal2ReasonExtMat1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم تا بتوانم در آینده موقعیت شغلی بهتری داشته باشم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*18/-28*/
+                        // I pursue this goal because it represents what I value
+                        // most in life.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal2ReasonIntrin1",
                         "questionPrompt": "این هدف را دنبال می‌کنم چون تلاش برای رسیدن به آن برایم لذت‌بخش است",
                         "minResponse": 0,
                         "maxResponse": 4,
@@ -1306,13 +1539,13 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*31/-15*/
-                        // I pursue this goal because it represents what I value
-                        // most in life.
+                        /*14/-31*/
+                        // I pursue this goal because other people expect it from
+                        // me.
                         {
                         "type": "mult1",
-                        "variableName": "Goal2ReasonIdentity",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون نشان‌دهندهٔ چیزهایی است که بیشترین ارزش را برایم دارند",
+                        "variableName": "Goal2ReasonExtSoc2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون باعث می‌شود دیگران (خانواده، دوستان و ...) احترام بیشتری به من بگذارند",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1323,25 +1556,158 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*32/-14*/
-                        // From 0 to 100, how much would you rate the importance of
-                        // this goal for you yourself?
+                        /*15/-31*/
+                        // I pursue this goal because if I would feel guilty if I
+                        // don't.
                         {
-                        "type": "slider",
-                        "variableName": "PersonalImportance2",
-                        "questionPrompt": "به این هدف (goal2) به اندازه ارزش و اولویتی که برای شخص شما دارد از ۱ تا ۱۰۰ چه نمره‌ای می‌دهید؟ عددهای بالاتر نشان‌دهندهٔ اهمیت بیشتر هستند",
+                        "type": "mult1",
+                        "variableName": "Goal2ReasonIntroj2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون در غیر این صورت احساس بدی به خودم خواهم داشت",
                         "minResponse": 0,
-                        "maxResponse": 100,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
                         },
-                        /*33/-13*/
-                        // From 0 to 100, how much would you rate the importance of
-                        // this goal for your parents?
+                        /*16/-30*/
+                        // I pursue this goal because I genuinely believe that
+                        // achieving it is important and I value it wholeheartedly
                         {
-                        "type": "slider",
-                        "variableName": "ParentalImportance2",
-                        "questionPrompt": "به این هدف (goal2) به اندازه ارزش و اولویتی که برای والدین شما دارد از ۱ تا ۱۰۰ چه نمره‌ای می‌دهید؟ عددهای بالاتر نشان‌دهندهٔ اهمیت بیشتر هستند",
+                        "type": "mult1",
+                        "variableName": "Goal2ReasonIdent2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون برای خودم ارزش‌مند است",
                         "minResponse": 0,
-                        "maxResponse": 100,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*17/-29*/
+                        // I pursue this goal because I enjoy the path leading
+                        // to it.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal2ReasonExtMat2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون باعث می‌شود در آینده درآمد بیشتری کسب کنم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*17/-29*/
+                        // I pursue this goal because I enjoy the path leading
+                        // to it.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal2ReasonIntrin2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون هیجان‌انگیز است",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*14/-31*/
+                        // I pursue this goal because other people expect it from
+                        // me.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal2ReasonExtSoc3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم تا مورد انتقاد دیگران (خانواده، دوستان و ...) قرار نگیرم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*15/-31*/
+                        // I pursue this goal because if I would feel guilty if I
+                        // don't.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal2ReasonIntroj3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون باعث می‌شود به خودم افتخار کنم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*16/-30*/
+                        // I pursue this goal because I genuinely believe that
+                        // achieving it is important and I value it wholeheartedly
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal2ReasonIdent3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون نشان‌دهندهٔ چیزهایی است که به شخصه برایشان ارزش قائلم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*17/-29*/
+                        // I pursue this goal because I enjoy the path leading
+                        // to it.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal2ReasonExtMat3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون در غیر این صورت نمی‌توانم شغل مناسبی در آینده داشته باشم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*17/-29*/
+                        // I pursue this goal because I enjoy the path leading
+                        // to it.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal2ReasonIntrin3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون برایم جذاب است",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
                         },
                         /*34/-12*/
                         // Please answer the following questions regarding your
@@ -1415,21 +1781,41 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
+                        /*45/-1*/
+                        // From 0 to 100, how much would you rate the importance of
+                        // this goal for you yourself?
+                        {
+                        "type": "slider",
+                        "variableName": "PersonalImportance3",
+                        "questionPrompt": "به این هدف (goal3) به اندازه ارزش و اولویتی که برای شخص شما دارد (نسبت به بقیهٔ اهداف و کارهایتان در زندگی)، از ۱ تا ۱۰۰ چه نمره‌ای می‌دهید؟ (عددهای بالاتر نشان‌دهندهٔ اهمیت بیشتر هستند)",
+                        "minResponse": 0,
+                        "maxResponse": 100,
+                        },
+                        /*46/0*/
+                        // From 0 to 100, how much would you rate the importance of
+                        // this goal for your parents?
+                        {
+                        "type": "slider",
+                        "variableName": "ParentalImportance3",
+                        "questionPrompt": "به این هدف (goal3) به اندازه ارزش و اولویتی که برای والدین شما دارد (نسبت به بقیهٔ اهداف و کارهای شما در زندگی)، از ۱ تا ۱۰۰ چه نمره‌ای می‌دهید؟ (عددهای بالاتر نشان‌دهندهٔ اهمیت بیشتر هستند)",
+                        "minResponse": 0,
+                        "maxResponse": 100,
+                        },
                         /*39/-7*/
                         // Please rate how much the following statements picture
                         // why you pursue this goal.
                         {
                         "type":"instructions",
                         "variableName": "Goal3ReasonsInstructions",
-                        "questionPrompt": "لطفاُ مشخص کنید هر یک از گزاره‌هایی که در ادامه می‌آید تا چه حد دلیل دنبال کردن این هدف (goal3) توسط شما را به درستی نشان می‌دهد",
+                        "questionPrompt": "لطفاً مشخص کنید هر یک از گزاره‌هایی که در ادامه می‌آید تا چه حد دلیل دنبال کردن این هدف (goal3) توسط شما را به درستی نشان می‌دهد",
                         },
-                        /*40/-6*/
+                        /*14/-31*/
                         // I pursue this goal because other people expect it from
                         // me.
                         {
                         "type": "mult1",
-                        "variableName": "Goal3ReasonOthers",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون افراد دیگری انتظار دارند به آن برسم",
+                        "variableName": "Goal3ReasonExtSoc1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم تا مورد تأیید دیگران (خانواده، دوستان و ...) قرار بگیرم",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1440,13 +1826,13 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*41/-5*/
+                        /*15/-31*/
                         // I pursue this goal because if I would feel guilty if I
                         // don't.
                         {
                         "type": "mult1",
-                        "variableName": "Goal3ReasonGuilt",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون در غیر این صورت احساس گناه می‌کنم",
+                        "variableName": "Goal3ReasonIntroj1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون در غیر این صورت احساس گناه و شرمندگی می‌کنم",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1457,13 +1843,13 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*42/-4*/
+                        /*16/-30*/
                         // I pursue this goal because I genuinely believe that
                         // achieving it is important and I value it wholeheartedly
                         {
                         "type": "mult1",
-                        "variableName": "Goal3ReasonBelief",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون واقعا باور دارم رسیدن به این هدف مهم است و برای آن از صمیم قلبم ارزش قائلم",
+                        "variableName": "Goal3ReasonIdent1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون باور دارم رسیدن به آن مهم است",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1474,12 +1860,29 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*43/-3*/
+                        /*17/-29*/
                         // I pursue this goal because I enjoy the path leading
                         // to it.
                         {
                         "type": "mult1",
-                        "variableName": "Goal3ReasonFun",
+                        "variableName": "Goal3ReasonExtMat1",
+                        "questionPrompt": "این هدف را دنبال می‌کنم تا بتوانم در آینده موقعیت شغلی بهتری داشته باشم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*18/-28*/
+                        // I pursue this goal because it represents what I value
+                        // most in life.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal3ReasonIntrin1",
                         "questionPrompt": "این هدف را دنبال می‌کنم چون تلاش برای رسیدن به آن برایم لذت‌بخش است",
                         "minResponse": 0,
                         "maxResponse": 4,
@@ -1491,13 +1894,13 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*44/-2*/
-                        // I pursue this goal because it represents what I value
-                        // most in life.
+                        /*14/-31*/
+                        // I pursue this goal because other people expect it from
+                        // me.
                         {
                         "type": "mult1",
-                        "variableName": "Goal3ReasonIdentity",
-                        "questionPrompt": "این هدف را دنبال می‌کنم چون نشان‌دهندهٔ چیزهایی است که بیشترین ارزش را برایم دارند",
+                        "variableName": "Goal3ReasonExtSoc2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون باعث می‌شود دیگران (خانواده، دوستان و ...) احترام بیشتری به من بگذارند",
                         "minResponse": 0,
                         "maxResponse": 4,
                         "labels": [
@@ -1508,26 +1911,159 @@ var participantSetup = [
                                  {"label": "کاملا"}
                                  ],
                         },
-                        /*45/-1*/
-                        // From 0 to 100, how much would you rate the importance of
-                        // this goal for you yourself?
+                        /*15/-31*/
+                        // I pursue this goal because if I would feel guilty if I
+                        // don't.
                         {
-                        "type": "slider",
-                        "variableName": "PersonalImportance3",
-                        "questionPrompt": "به این هدف (goal3) به اندازه ارزش و اولویتی که برای شخص شما دارد از ۱ تا ۱۰۰ چه نمره‌ای می‌دهید؟ عددهای بالاتر نشان‌دهندهٔ اهمیت بیشتر هستند",
+                        "type": "mult1",
+                        "variableName": "Goal3ReasonIntroj2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون در غیر این صورت احساس بدی به خودم خواهم داشت",
                         "minResponse": 0,
-                        "maxResponse": 100,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
                         },
-                        /*46/0*/
-                        // From 0 to 100, how much would you rate the importance of
-                        // this goal for your parents?
+                        /*16/-30*/
+                        // I pursue this goal because I genuinely believe that
+                        // achieving it is important and I value it wholeheartedly
                         {
-                        "type": "slider",
-                        "variableName": "ParentalImportance3",
-                        "questionPrompt": "به این هدف (goal3) به اندازه ارزش و اولویتی که برای والدین شما دارد از ۱ تا ۱۰۰ چه نمره‌ای می‌دهید؟ عددهای بالاتر نشان‌دهندهٔ اهمیت بیشتر هستند",
+                        "type": "mult1",
+                        "variableName": "Goal3ReasonIdent2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون برای خودم ارزش‌مند است",
                         "minResponse": 0,
-                        "maxResponse": 100,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
                         },
+                        /*17/-29*/
+                        // I pursue this goal because I enjoy the path leading
+                        // to it.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal3ReasonExtMat2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون باعث می‌شود در آینده درآمد بیشتری کسب کنم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*17/-29*/
+                        // I pursue this goal because I enjoy the path leading
+                        // to it.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal3ReasonIntrin2",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون هیجان‌انگیز است",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*14/-31*/
+                        // I pursue this goal because other people expect it from
+                        // me.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal3ReasonExtSoc3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم تا مورد انتقاد دیگران (خانواده، دوستان و ...) قرار نگیرم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*15/-31*/
+                        // I pursue this goal because if I would feel guilty if I
+                        // don't.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal3ReasonIntroj3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون باعث می‌شود به خودم افتخار کنم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*16/-30*/
+                        // I pursue this goal because I genuinely believe that
+                        // achieving it is important and I value it wholeheartedly
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal3ReasonIdent3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون نشان‌دهندهٔ چیزهایی است که به شخصه برایشان ارزش قائلم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*17/-29*/
+                        // I pursue this goal because I enjoy the path leading
+                        // to it.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal3ReasonExtMat3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون در غیر این صورت نمی‌توانم شغل مناسبی در آینده داشته باشم",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        },
+                        /*17/-29*/
+                        // I pursue this goal because I enjoy the path leading
+                        // to it.
+                        {
+                        "type": "mult1",
+                        "variableName": "Goal3ReasonIntrin3",
+                        "questionPrompt": "این هدف را دنبال می‌کنم چون برایم جذاب است",
+                        "minResponse": 0,
+                        "maxResponse": 4,
+                        "labels": [
+                                 {"label": "اصلا"},
+                                 {"label": "کم"},
+                                 {"label": "تا حدودی"},
+                                 {"label": "زیاد"},
+                                 {"label": "کاملا"}
+                                 ],
+                        }
                     ];
 
 /*Populate the view with data from surveyQuestion model*/
@@ -1577,6 +2113,10 @@ bindEvents: function() {
 
 // these functions tell the app what to do at different stages of running
 onDeviceReady: function() {
+    cordova.plugins.notification.local.setDefaults({
+        led: { color: '#FF00FF', on: 500, off: 500 },
+        vibrate: true
+    });
     app.init();
 },
 
@@ -1849,10 +2389,10 @@ init: function() {
     }
     // Here, we lock the participant out of the App if they have filled the questions in
     // the past 10 minutes, to prevent them from hoarding!
-    // else if ((current_time - localStore.pause_time) < 600000 && localStore.snoozed == 0)
-    // {
-    //     $("#question").html("<h3>به تازگی به سؤالات پاسخ داده‌اید! لطفاً ده دقیقه دیگر وارد شوید</h3>");
-    // }
+    else if ((current_time - localStore.uniqueKey) < 600000 && localStore.snoozed == 0)
+    {
+        $("#question").html("<h3>به تازگی به سؤالات پاسخ داده‌اید! لطفاً ده دقیقه دیگر وارد شوید</h3>");
+    }
   	//otherwise ExperienceSampler should just save the unique key and display the first question in survey questions
   	else
     {
@@ -1933,12 +2473,12 @@ recordResponse: function(button, count, type) {
         uniqueRecord = uniqueKey + "_" + currentQuestion + "_" + year + "_" + month + "_" + day + "_" + hours + "_" + minutes + "_" + seconds + "_" + milliseconds;
     }
 
-    if (count == -42) {goal1 = response;}
-    if (count == -41) {goal2 = response;}
-    if (count == -40) {goal3 = response;}
+    if (count == -72) {goal1 = response;}
+    if (count == -71) {goal2 = response;}
+    if (count == -70) {goal3 = response;}
     if (count == 1) {currentAction = response;}
     if (count == 13) {altAction = response;}
-    if (count == 38) {preAction = response;}
+    if (count == 39) {preAction = response;}
 
     //Save this to local storage
     localStore[uniqueRecord] = response;
@@ -1963,7 +2503,7 @@ recordResponse: function(button, count, type) {
         var notifDifference = ((sleepHour - currentHour)*60 + (sleepMin - currentMin))
         // Head for Parental Behavior questions if its the last notifiation,
         // otherwise, start the Action questions
-        if (notifDifference <= 30) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(48);});}
+        if (notifDifference <= 30) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(49);});}
         else {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(1);});}
     }
     // Branching at question 3 (ActionGoals) question, if "others" option is chosen, question 4 (OtherGoals) would
@@ -1990,14 +2530,16 @@ recordResponse: function(button, count, type) {
     // would be presented, otherwise it proceeds to question 16 (Satisfaction)
     else if (count == 14 && response < 4) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(17);});}
     else if (count == 14 && response == 4) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(15);});}
-    else if (count == 27) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(42);});}
-    else if (count == 39 && response < 4) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(42);});}
-    else if (count == 39 && response == 4) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(40);});}
-    else if (count == 47) {app.renderLastPage(lastPage[2], count);}
-    else if (count == 50 && response == 0) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(51);});}
-    else if (count == 50 && response == 1) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(53);});}
+    else if (count == 27) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(43);});}
+    else if (count == 40 && response < 4) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(43);});}
+    else if (count == 40 && response == 4) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(41);});}
+    else if (count == 48) {app.renderLastPage(lastPage[2], count);}
     else if (count == 51 && response == 0) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(52);});}
-    else if (count == 51 && response == 1) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(53);});}
+    else if (count == 51 && response == 1) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(54);});}
+    else if (count == 52 && response == 0) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(53);});}
+    else if (count == 52 && response == 1) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(54);});}
+    else if (count == 57 && response == 0) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(58);});}
+    else if (count == 57 && response == 1) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(59);});}
     else if (count < surveyQuestions.length-1) {$("#question").fadeOut(400, function () {$("#question").html("");app.renderQuestion(count+1);});}
     else {app.renderLastPage(lastPage[2], count);}
 },
@@ -2119,7 +2661,7 @@ scheduleNotifs:function() {
     var randomRange = 60*60*1000; // 1 hour in milliseconds
     var maxAwakeTimeRequired = 6*1.5*60*60*1000;
     var nightlyLag = 30*60*1000;
-    startDate = 16;
+    startDate = 21;
     delayDays = 24*(startDate - parseInt(currentDate));
 
     dayCount = 0
@@ -2237,19 +2779,14 @@ scheduleNotifs:function() {
         epoch5 = date5.getTime();
         epoch6 = date6.getTime();
 
-        cordova.plugins.notification.local.setDefaults({
-            led: { color: '#FF00FF', on: 500, off: 500 },
-            vibrate: true
-        });
-
 			  //This part of the code schedules the notifications
       	cordova.plugins.notification.local.schedule([
-          {icon: 'ic_launcher', id: a, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch1)} },
-  				{icon: 'ic_launcher', id: b, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch2)} },
-  				{icon: 'ic_launcher', id: c, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch3)} },
-  				{icon: 'ic_launcher', id: d, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch4)} },
-  				{icon: 'ic_launcher', id: e, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch5)} },
-  				{icon: 'ic_launcher', id: f, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch6)} }
+          {icon: 'ic_launcher', id: a, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch1)}, sound:true, vibrate: true, led: { color: '#FF00FF', on: 500, off: 500 } },
+  				{icon: 'ic_launcher', id: b, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch2)}, sound:true, vibrate: true, led: { color: '#FF00FF', on: 500, off: 500 } },
+  				{icon: 'ic_launcher', id: c, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch3)}, sound:true, vibrate: true, led: { color: '#FF00FF', on: 500, off: 500 } },
+  				{icon: 'ic_launcher', id: d, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch4)}, sound:true, vibrate: true, led: { color: '#FF00FF', on: 500, off: 500 } },
+  				{icon: 'ic_launcher', id: e, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch5)}, sound:true, vibrate: true, led: { color: '#FF00FF', on: 500, off: 500 } },
+  				{icon: 'ic_launcher', id: f, text: 'زمان پاسخ به سؤالات', title: 'پرسش‌های روزانه', trigger: {at: new Date(epoch6)}, sound:true, vibrate: true, led: { color: '#FF00FF', on: 500, off: 500 } }
         ]);
 
 			  //This part of the code records when the notifications are scheduled for and sends it to the server
